@@ -222,3 +222,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CoinPrefab: {fileID: 6197476499522321656, guid: f55c19c32a845a04d87435f5efdd8954, type: 3}
+  isActivate: 1
+  unActivateBoxSprite: {fileID: -1506456857, guid: 6e3dc4d64df4bd94bbe94ef45f30ca86, type: 3}
