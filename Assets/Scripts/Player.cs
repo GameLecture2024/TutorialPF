@@ -9,9 +9,12 @@ public class Player : MonoBehaviour
     public Transform playerStartPosition;
     private Rigidbody2D rigid;
 
+    ParticleSystem dust;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        dust = GetComponentInChildren<ParticleSystem>();
     }
 
     // Start is called before the first frame update
@@ -30,11 +33,17 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space))
         {
+            CreateDust();
             rigid.velocity = new Vector2(rigid.velocity.x, 10);
         }
 
         // 입력에 맞는 방향을 설정하는 법
         // 캐릭터가 방향
         // 시간 속력 움직인 거리
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
