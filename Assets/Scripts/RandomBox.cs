@@ -25,6 +25,8 @@ public class RandomBox : MonoBehaviour
 
             // 부모의(오브젝트이름이 RandomBox안의) SpriteRenderer요소의 sprite 값을 tilemap_29로 변경하라.
             _sr.sprite = unActivateBoxSprite;
+
+            SoundManager.Instance?.PlaySFX("Coin");
         }
     }
 

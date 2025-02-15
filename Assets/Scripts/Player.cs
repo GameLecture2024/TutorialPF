@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigid;
 
     ParticleSystem dust;
+    Animator animator;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         // 플레이어가 시작할 때 내가 지정한 위치로 이동하라.
         transform.position = playerStartPosition.position;
     }
@@ -33,7 +35,9 @@ public class Player : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Space))
         {
-            CreateDust();
+            animator.SetTrigger("jump");
+            SoundManager.Instance?.PlaySFX("Jump");
+            CreateDust(); 
             rigid.velocity = new Vector2(rigid.velocity.x, 10);
         }
 
